@@ -5,22 +5,32 @@ import java.util.Map;
 
 public class Collection {
 
-    private int id;
-    private Map<Integer, Integer> cards = new HashMap<>();
+    private String name;
+    private Map<String, Integer> cards = new HashMap<>();
 
-    public int getId() {
-        return id;
+    public void createCollection(Integer amount) {
+        for (int i = 1; i <= amount; i++)
+            this.cards.put(""+i, 0);
+    }
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Map<Integer, Integer> getCards() {
+    public Map<String, Integer> getCards() {
         return cards;
     }
 
-    public void setCards(Integer card, Integer amount) {
+    public void setCards(String card, Integer amount) {
         this.cards.put(card, amount);
+    }
+
+    public Collection(String name) {
+        this.name = name;
+    }
+    public Collection() {
     }
 }
