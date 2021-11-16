@@ -19,7 +19,7 @@ public class Main {
         Set<Integer> keys = map.keySet();
 
         List<Integer> values = new ArrayList<>(map.values());
-
+//
         System.out.println(map.get(1));
         System.out.println("Значения: " + values);
 
