@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "collections-core:collections-domain:collections-business-api"
+}
+
+test {
+    useJUnitPlatform()
+}

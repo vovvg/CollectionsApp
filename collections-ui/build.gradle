@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+group "ru.collections.app"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "collections-core:collections-domain:collections-endpoint-impl"
+}
+
+test {
+    useJUnitPlatform()
+}
