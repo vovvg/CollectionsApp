@@ -72,6 +72,7 @@ public class CollectionScene {
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
         }
+        card.selectAll();
         collectionService.add(user, collection);
 
     }
