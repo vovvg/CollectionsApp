@@ -21,6 +21,16 @@ public class CollectionServiceImpl implements CollectionService {
     private ConfigurableApplicationContext appContext;
 
     @Override
+    public String total(Collection collection, Integer integer) {
+        Integer uniq = 0;
+        for (int i = 1; i <= collection.getNumeric().size(); i++) {
+            if (collection.getNumeric().get(String.valueOf(i)) > integer)
+                uniq++;
+        }
+        return String.valueOf(uniq);
+    }
+
+    @Override
     public void add(String user, Collection collection) {
         firebaseService.addToCollection(user, collection);
     }

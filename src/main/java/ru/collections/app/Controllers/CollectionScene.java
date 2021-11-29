@@ -26,6 +26,7 @@ import java.util.concurrent.ExecutionException;
 public class CollectionScene {
 
 
+
     CollectionService collectionService = new CollectionServiceImpl();
 
     @FXML
@@ -38,6 +39,8 @@ public class CollectionScene {
     private ListView listNumericCards;
     @FXML
     private ListView listAlphabeticCards;
+    @FXML
+    private Label repeat;
     @FXML
     private Button back;
 
@@ -74,6 +77,7 @@ public class CollectionScene {
         }
         card.selectAll();
         collectionService.add(user, collection);
+        repeat.setText(collectionService.total(collection, 1));
 
     }
 
@@ -87,7 +91,9 @@ public class CollectionScene {
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
         }
+        card.selectAll();
         collectionService.add(user, collection);
+        repeat.setText(collectionService.total(collection, 1));
     }
 
     public void backScene(ActionEvent event) throws IOException, ExecutionException, InterruptedException {
@@ -117,10 +123,14 @@ public class CollectionScene {
     public void setCollection() {
         try {
             this.collection = collectionService.getCollection(this.user, collectionName.getText());
+
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         ;
     }
 
+    public void setRepeat() {
+        this.repeat.setText(collectionService.total(collection, 1));
+    }
 }
