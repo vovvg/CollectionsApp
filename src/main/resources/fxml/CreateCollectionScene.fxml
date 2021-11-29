@@ -18,7 +18,7 @@
       <Label layoutX="68.0" layoutY="270.0" text="Количество карт" />
       <TextField fx:id="alphabeticAmount" layoutX="40.0" layoutY="293.0" />
 
-      <Button fx:id="apply" layoutX="84.0" layoutY="325.0" mnemonicParsing="false" onAction="#create" text="Создать" />
+      <Button fx:id="apply" defaultButton="true" layoutX="84.0" layoutY="325.0" mnemonicParsing="false" onAction="#create" text="Создать" />
 
       <Label layoutX="37.0" layoutY="23.0" text="Создание коллекции">
          <font>
