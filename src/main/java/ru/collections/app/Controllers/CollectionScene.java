@@ -54,11 +54,11 @@ public class CollectionScene {
 
     public void viewCollection() throws ExecutionException, InterruptedException {
         if (collection.getAlphabetic() != null)
-            for (int i = 1; i < collection.getAlphabetic().getCards().size(); i++) {
+            for (int i = 1; i <= collection.getAlphabetic().getCards().size(); i++) {
                 listAlphabeticCards.getItems().add(collection.getAlphabetic().getPrefix() + i + " : " + collection.getAlphabetic().getCards().get(collection.getAlphabetic().getPrefix() + i));
                 listAlphabeticCards.setVisible(true);
             }
-        for (int i = 1; i < collection.getNumeric().size(); i++)
+        for (int i = 1; i <= collection.getNumeric().size(); i++)
             listNumericCards.getItems().add(i + " : " + collection.getNumeric().get(String.valueOf(i)));
     }
 
