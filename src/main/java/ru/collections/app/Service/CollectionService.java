@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public interface CollectionService {
-    String total(Collection collection, Integer i);
+    String sortByAmount(Collection collection, Integer i);
     void add(String user, Collection collection);
     void create(String user, String name, Integer amountNumeric, String prefix, Integer amountAlphabetic);
     void create(String user, String name, Integer amountNumeric);

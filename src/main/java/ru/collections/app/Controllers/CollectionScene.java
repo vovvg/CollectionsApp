@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import ru.collections.app.Entity.Collection;
 import ru.collections.app.JavaFxApp;
 import ru.collections.app.Service.CollectionService;
@@ -70,14 +71,14 @@ public class CollectionScene {
             collection.getNumeric().put(card.getText(), collection.getNumeric().get(card.getText()) + 1);
             listNumericCards.getItems().set(Integer.parseInt(card.getText()) - 1, Integer.parseInt(card.getText()) + " : " + collection.getNumeric().get(card.getText()));
         }
-        if (collection.getAlphabetic().getCards().get(card.getText()) != null) {
+        if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
             collection.getAlphabetic().getCards().put(card.getText(), collection.getAlphabetic().getCards().get(card.getText()) + 1);
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
         }
         card.selectAll();
         collectionService.add(user, collection);
-        repeat.setText(collectionService.total(collection, 1));
+        repeat.setText(collectionService.sortByAmount(collection, 1));
 
     }
 
@@ -86,14 +87,14 @@ public class CollectionScene {
             collection.getNumeric().put(card.getText(), collection.getNumeric().get(card.getText()) - 1);
             listNumericCards.getItems().set(Integer.parseInt(card.getText()) - 1, Integer.parseInt(card.getText()) + " : " + collection.getNumeric().get(card.getText()));
         }
-        if (collection.getAlphabetic().getCards().get(card.getText()) != null) {
+        if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
             collection.getAlphabetic().getCards().put(card.getText(), collection.getAlphabetic().getCards().get(card.getText()) - 1);
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
         }
         card.selectAll();
         collectionService.add(user, collection);
-        repeat.setText(collectionService.total(collection, 1));
+        repeat.setText(collectionService.sortByAmount(collection, 1));
     }
 
     public void backScene(ActionEvent event) throws IOException, ExecutionException, InterruptedException {
@@ -131,6 +132,6 @@ public class CollectionScene {
     }
 
     public void setRepeat() {
-        this.repeat.setText(collectionService.total(collection, 1));
+        this.repeat.setText(collectionService.sortByAmount(collection, 1));
     }
 }

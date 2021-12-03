@@ -17,11 +17,8 @@ public class CollectionServiceImpl implements CollectionService {
 
     FirebaseService firebaseService = new FirebaseServiceImpl();
 
-    @Autowired
-    private ConfigurableApplicationContext appContext;
-
     @Override
-    public String total(Collection collection, Integer integer) {
+    public String sortByAmount(Collection collection, Integer integer) {
         Integer uniq = 0;
         for (int i = 1; i <= collection.getNumeric().size(); i++) {
             if (collection.getNumeric().get(String.valueOf(i)) > integer)
