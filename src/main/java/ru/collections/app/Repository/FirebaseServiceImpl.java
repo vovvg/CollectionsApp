@@ -9,14 +9,12 @@ import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
-import org.springframework.stereotype.Service;
 import ru.collections.app.Entity.Collection;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-@Service
 public class FirebaseServiceImpl implements FirebaseService {
 
     @Override

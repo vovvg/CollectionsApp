@@ -10,8 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxmlView;
-import org.springframework.stereotype.Controller;
 import ru.collections.app.JavaFxApp;
 import ru.collections.app.Service.CollectionService;
 import ru.collections.app.Service.CollectionServiceImpl;
@@ -19,11 +17,7 @@ import ru.collections.app.Service.CollectionServiceImpl;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-@Controller
-@FxmlView("/fxml/CreateCollectionScene.fxml")
 public class CreateCollectionScene {
-
-
 
     CollectionService collectionService = new CollectionServiceImpl();
 
@@ -56,7 +50,7 @@ public class CreateCollectionScene {
         HomeScene homeScene = loader.getController();
         homeScene.setUser((user));
         homeScene.setListCards();
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }

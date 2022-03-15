@@ -11,8 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxmlView;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.ObjectUtils;
 import ru.collections.app.Entity.Collection;
 import ru.collections.app.JavaFxApp;
@@ -22,8 +20,6 @@ import ru.collections.app.Service.CollectionServiceImpl;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-@Controller
-@FxmlView("/fxml/CollectionScene.fxml")
 public class CollectionScene {
 
 

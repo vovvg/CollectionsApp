@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxmlView;
 import ru.collections.app.Entity.Collection;
 import ru.collections.app.JavaFxApp;
 import ru.collections.app.Service.CollectionService;
@@ -22,7 +21,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-@FxmlView("/fxml/HomeScene.fxml")
 public class HomeScene {
 
 
@@ -67,6 +65,7 @@ public class HomeScene {
                 }
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                assert root != null;
                 stage.setScene(new Scene(root));
                 stage.show();
             }

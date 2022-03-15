@@ -8,15 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import net.rgielen.fxweaver.core.FxmlView;
-import org.springframework.stereotype.Controller;
 import ru.collections.app.JavaFxApp;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
-@Controller
-@FxmlView("/fxml/LoginScene.fxml")
 public class LoginScene {
 
     @FXML

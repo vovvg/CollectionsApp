@@ -1,8 +1,5 @@
 package ru.collections.app.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.stereotype.Service;
 import ru.collections.app.Entity.AlphabeticCard;
 import ru.collections.app.Entity.Collection;
 import ru.collections.app.Repository.FirebaseService;
@@ -12,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
-@Service
 public class CollectionServiceImpl implements CollectionService {
 
     FirebaseService firebaseService = new FirebaseServiceImpl();
