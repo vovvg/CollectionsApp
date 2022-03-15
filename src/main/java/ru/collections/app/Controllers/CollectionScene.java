@@ -71,7 +71,7 @@ public class CollectionScene {
             collection.getNumeric().put(card.getText(), collection.getNumeric().get(card.getText()) + 1);
             listNumericCards.getItems().set(Integer.parseInt(card.getText()) - 1, Integer.parseInt(card.getText()) + " : " + collection.getNumeric().get(card.getText()));
         }
-        if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
+        else if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
             collection.getAlphabetic().getCards().put(card.getText(), collection.getAlphabetic().getCards().get(card.getText()) + 1);
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
@@ -87,7 +87,7 @@ public class CollectionScene {
             collection.getNumeric().put(card.getText(), collection.getNumeric().get(card.getText()) - 1);
             listNumericCards.getItems().set(Integer.parseInt(card.getText()) - 1, Integer.parseInt(card.getText()) + " : " + collection.getNumeric().get(card.getText()));
         }
-        if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
+        else if (!ObjectUtils.isEmpty(collection.getAlphabetic())) {
             collection.getAlphabetic().getCards().put(card.getText(), collection.getAlphabetic().getCards().get(card.getText()) - 1);
             listAlphabeticCards.getItems().set(Integer.parseInt(card.getText().replaceFirst(collection.getAlphabetic().getPrefix(), "")) - 1,
                     card.getText() + " : " + collection.getAlphabetic().getCards().get(card.getText()));
