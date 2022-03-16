@@ -78,7 +78,7 @@ public class CollectionScene {
         }
         card.selectAll();
         collectionService.add(user, collection);
-        repeat.setText(collectionService.sortByAmount(collection, 1));
+        repeat.setText(collectionService.repeatCards(collection));
 
     }
 
@@ -94,7 +94,7 @@ public class CollectionScene {
         }
         card.selectAll();
         collectionService.add(user, collection);
-        repeat.setText(collectionService.sortByAmount(collection, 1));
+        repeat.setText(collectionService.repeatCards(collection));
     }
 
     public void backScene(ActionEvent event) throws IOException, ExecutionException, InterruptedException {
@@ -132,6 +132,6 @@ public class CollectionScene {
     }
 
     public void setRepeat() {
-        this.repeat.setText(collectionService.sortByAmount(collection, 1));
+        this.repeat.setText(collectionService.repeatCards(collection));
     }
 }

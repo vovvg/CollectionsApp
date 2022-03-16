@@ -7,6 +7,7 @@ import java.util.concurrent.ExecutionException;
 
 public interface CollectionService {
     String sortByAmount(Collection collection, Integer i);
+    String repeatCards(Collection collection);
     void add(String user, Collection collection);
     void create(String user, String name, Integer amountNumeric, String prefix, Integer amountAlphabetic);
     void create(String user, String name, Integer amountNumeric);

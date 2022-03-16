@@ -22,6 +22,16 @@ public class CollectionServiceImpl implements CollectionService {
         Integer uniq = 0;
         for (int i = 1; i <= collection.getNumeric().size(); i++) {
             if (collection.getNumeric().get(String.valueOf(i)) > integer)
+                uniq++;
+        }
+        return String.valueOf(uniq);
+    }
+
+    @Override
+    public String repeatCards(Collection collection) {
+        Integer uniq = 0;
+        for (int i = 1; i <= collection.getNumeric().size(); i++) {
+            if (collection.getNumeric().get(String.valueOf(i)) > 1)
                 uniq += collection.getNumeric().get(String.valueOf(i)) - 1;
         }
         return String.valueOf(uniq);
